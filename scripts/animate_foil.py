@@ -4,9 +4,10 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import sys
 
-#airfoil = naca_airfoil("0006", 20) # NACA 0012 airfoil with 20 points per side
-#airfoil = naca_airfoil("2214", 20) 
-airfoil = joukowski_foil(-.1,.1,.5,100)
+#airfoil = naca_airfoil("0006", 20)
+airfoil = naca_airfoil("2214", 20) 
+airfoil = TransformedBody(airfoil, 0, [-.25,0])
+#airfoil = joukowski_foil(-.1,.1,.5,100)
 #airfoil = van_de_vooren_foil(0.5, 0.1, 3)
 #airfoil = karman_trefftz_foil(-.1,.1,1,10,32)
 #airfoil = flat_plate(20)
