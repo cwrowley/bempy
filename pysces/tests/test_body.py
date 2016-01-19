@@ -19,22 +19,22 @@ class TestFactories(unittest.TestCase):
         npoints = 20
         body = naca_airfoil("0012", npoints, uniform=True)
         self.assertEqual(len(body.get_points()), 2*npoints - 1)
-        body2 = naca_airfoil("2412", npoints, zero_thick_te=True)
+        body2 = naca_airfoil("2412", npoints, te_clamp=True)
         self.assertEqual(len(body2.get_points()), 2*npoints - 1)
 
     def test_joukowski_foil(self):
         npts = 32
-        body = joukowski_foil(numpoints=npts)
+        body = joukowski_foil(num_points=npts)
         self.assertEqual(len(body.get_points()),npts)
 
     def test_karman_trefftz_foil(self):
         npts = 32
-        body = karman_trefftz_foil(numpoints=npts)
+        body = karman_trefftz_foil(num_points=npts)
         self.assertEqual(len(body.get_points()),npts)
 
     def test_van_de_vooren_foil(self):
         npts = 32
-        body = van_de_vooren_foil(numpoints=npts)
+        body = van_de_vooren_foil(num_points=npts)
         self.assertEqual(len(body.get_points()),npts)
 
 class TestBody(unittest.TestCase):
